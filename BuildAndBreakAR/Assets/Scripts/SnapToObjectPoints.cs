@@ -1,30 +1,33 @@
 using UnityEngine;
 
-public class SnapToObjectPoints : MonoBehaviour
+public class SnapToGrid : MonoBehaviour
 {
-    [SerializeField] private Transform otherTransform;
     [SerializeField] private float snapScaleX = 1, snapScaleY = 1, snapScaleZ = 1;
-    private float posX, otherX, posY, otherY, posZ, otherZ;
+    private float posX, posY, posZ;
 
     void Update()
     {
-        // Snap position
-        otherX = (otherTransform.position.x >= 0f) ? (otherTransform.position.x + snapScaleX * 0.5f) : (otherTransform.position.x - snapScaleX * 0.5f);
-        posX = otherX - (otherX % snapScaleX);
+        // Snap position based on the object's own position
+        float currentX = transform.position.x;
+        float currentY = transform.position.y;
+        float currentZ = transform.position.z;
 
-        otherY = (otherTransform.position.y >= 0f) ? (otherTransform.position.y + snapScaleY * 0.5f) : (otherTransform.position.y - snapScaleY * 0.5f);
-        posY = otherY - (otherY % snapScaleY);
+        posX = (currentX >= 0f) ? (currentX + snapScaleX * 0.5f) : (currentX - snapScaleX * 0.5f);
+        posX = posX - (posX % snapScaleX);
 
-        otherZ = (otherTransform.position.z >= 0f) ? (otherTransform.position.z + snapScaleZ * 0.5f) : (otherTransform.position.z - snapScaleZ * 0.5f);
-        posZ = otherZ - (otherZ % snapScaleZ);
+        posY = (currentY >= 0f) ? (currentY + snapScaleY * 0.5f) : (currentY - snapScaleY * 0.5f);
+        posY = posY - (posY % snapScaleY);
+
+        posZ = (currentZ >= 0f) ? (currentZ + snapScaleZ * 0.5f) : (currentZ - snapScaleZ * 0.5f);
+        posZ = posZ - (posZ % snapScaleZ);
 
         transform.position = new Vector3(posX, posY, posZ);
 
-        // Snap rotation to match the other object's rotation
+        // Snap rotation to the nearest 90 degrees
         transform.rotation = Quaternion.Euler(
-            Mathf.Round(otherTransform.rotation.eulerAngles.x / 90f) * 90f,
-            Mathf.Round(otherTransform.rotation.eulerAngles.y / 90f) * 90f,
-            Mathf.Round(otherTransform.rotation.eulerAngles.z / 90f) * 90f
+            Mathf.Round(transform.rotation.eulerAngles.x / 90f) * 90f,
+            Mathf.Round(transform.rotation.eulerAngles.y / 90f) * 90f,
+            Mathf.Round(transform.rotation.eulerAngles.z / 90f) * 90f
         );
     }
 }

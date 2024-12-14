@@ -445,7 +445,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3349ca3cb8db33546a127432e12a5aab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  otherTransform: {fileID: 5599257799128432452}
+  colliderTransform: {fileID: 5599257799128432452}
+  parentObject: {fileID: 4574000443639407178}
   snapScaleX: 0.00625
   snapScaleY: 0.00625
   snapScaleZ: 0.00625
