@@ -128,3 +128,7 @@ BuildAndBreakAR/Assets/Models/Brick_Radio.obj
 *.wav
 
 BuildAndBreakAR/Assets/Models/Brick_TVOld.obj
+
+*.cache
+
+BuildAndBreakAR/obj/Debug/
