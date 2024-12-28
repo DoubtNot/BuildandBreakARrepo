@@ -11,6 +11,7 @@ public class MusicPlayer : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        BeginPlaying();
     }
 
     void PlaySong(int index)

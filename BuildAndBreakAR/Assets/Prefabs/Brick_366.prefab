@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8753009492341993536}
-  - component: {fileID: 7225540390444043280}
   - component: {fileID: 7250635394077747738}
   - component: {fileID: 7297327881114654399}
   - component: {fileID: 2060339707137709502}
@@ -35,26 +34,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 619467448887917085}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7225540390444043280
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2839568332499589410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b023183069df224080314a560e6e1ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  blockId: f8766c17-aaf8-4b55-9431-de8deea83842
-  instanceId: 60de9c18-a24c-400f-8181-5be3b4a0fbed
-  version: 1
-  installationRoutineCheckpoint:
-    _installationRoutineId: f8338144-8280-4ff6-9455-ae2bb9c20fe8
-    _installationVariants:
-    - _memberName: mode
-      _value: '{"value__":0}'
 --- !u!114 &7250635394077747738
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,6 +183,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 03f1567ef2d817945b9a7e8763cf05c2, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 03f1567ef2d817945b9a7e8763cf05c2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 03f1567ef2d817945b9a7e8763cf05c2, type: 3}
       propertyPath: m_TagString
